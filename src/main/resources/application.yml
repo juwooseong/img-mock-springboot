@@ -1,0 +1,15 @@
+server:
+  port: ${IMG_MOCK_PORT:10917}
+  address: ${IMG_MOCK_HOST:127.0.0.1}
+
+spring:
+  application:
+    name: img-mock-server
+
+img-mock:
+  image-dir: ${IMG_MOCK_IMAGE_DIR:images}
+  cache-enabled: true
+
+logging:
+  level:
+    com.woori.ajs.imgmock: INFO
