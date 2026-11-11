@@ -1,0 +1,51 @@
+<발신 기본 정보>
+1. 은행구분 : 우리은행(20) 5. 해외발송조작자 : 8MCEN316
+2. 관련영업점 : 020037(11) 6. 해외발송책임자 : 999999999
+3. 업무구분 : FD 7. 수신전문의 회신전문여부 : 
+4. 고객번호 : 010989728
+Payment Type Infomation
+service Level
+23E Code:G001
+32A Interbank Settlement Amount:[JPY] 412011.00
+interbank Settlement Date:2026-10-04
+33B Instructed Amount:[JPY] 412011.00
+71A Charges bEARER:OUR
+instructing Agent
+Financial Institution Identification
+BICFI:HVBKKRSEXXX
+instructed Agent
+Financial Institution Identification
+BICFI:BOTKJPJTXXX
+Debtor
+50D Name:PARK JI HOON
+Postal Address
+Street Name:88, GYEONGGANG-RO
+Post Code:21999
+Town Name:INCHEON
+Town Location Name:YEONSU-GU
+contry:KR
+Debtor Account
+Identification
+Other
+Identificatio:010989728
+Creditor
+59 Name:NIPPON SEIKO KK
+Postal Address
+Town Name:TOKYO
+contry:JP
+Remittance Information
+70 Unstructured:INV NO 20261004-1000401 PAYMENT FOR GOODS
+<관련 수신 전문 정보>
+1. 수신일시 :
+2. 수신전문(MT/MOR/REF):
+<원장 MASTER KEY>
+1. 전문번호:20SSS20261004020779
+2. 분할번호:00
+3. 관련HOST KEY:20O20261004103A002369522
+4. 관련전문번호:
+5. CREATE DATE: 2026/10/04 16:30:51 CREATE USER:8MCEN
+6. VERIFY DATE:VERIFY USER:
+7. APPROVAL DATE: APPROVAL USER:9999999999
+8. 1'st ACK DATE: 2026/10/04 16:30:51 1'st ACK USER:
+9. 2'nd ACK DATE:
+[MOCK] INPT_MST_SRNO=10004 INPT_TASK_ID=1000401

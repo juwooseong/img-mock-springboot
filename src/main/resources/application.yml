@@ -9,6 +9,7 @@ spring:
 img-mock:
   image-dir: ${IMG_MOCK_IMAGE_DIR:images}
   cache-enabled: true
+  swift-sample-file: ${IMG_MOCK_SWIFT_SAMPLE:sample.txt}
 
 logging:
   level:

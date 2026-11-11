@@ -8,9 +8,24 @@ Spring Boot 기반 **CA 이미지 서버 Mock**입니다.
 | 항목 | 값 |
 |------|-----|
 | URL | `POST http://127.0.0.1:10917/sa/g001` |
-| Request | `{"inpt_task_id":"10001021","inpt_mst_srno":"10001"}` |
-| Response | `{"imgStr":"<Base64 JPEG>"}` |
+| Request | `{"inpt_task_id":"10001021","inpt_mst_srno":"10001","swift_yn":"N"}` |
+| Response (이미지) | `{"imgStr":"<Base64 JPEG>","type":"image"}` |
+| Response (SWIFT 전문) | `{"imgStr":"<전문 원문 텍스트>","type":"text"}` |
 | Health | `GET http://127.0.0.1:10917/health` |
+
+### SWIFT 전문 (문서분류코드 01)
+
+aisanctions `imgRest` 는 문서분류코드(`IMEX_HIS_CD`)가 `01` 이면 `swift_yn=Y` 를 보냅니다.
+아래 중 하나면 텍스트(`type=text`)로 응답하고, 화면에서 텍스트를 이미지로 그려 표시합니다.
+
+- `swift_yn` 이 `Y`
+- `images/{task_id}.txt` 파일이 존재
+
+전문 내용은 다음 순서로 찾습니다 (UTF-8, CRLF 는 LF 로 변환).
+
+1. `images/{task_id}.txt`
+2. `img-mock.swift-sample-file` (기본 `sample.txt`, 환경 변수 `IMG_MOCK_SWIFT_SAMPLE`)
+3. 내장 샘플 전문
 
 ## 실행
 

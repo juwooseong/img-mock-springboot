@@ -40,10 +40,16 @@ public class ImageMockController {
 
         String taskId = request.getInptTaskId().trim();
         String mstSrno = request.getInptMstSrno().trim();
-        log.info("image request mstSrno={} taskId={}", mstSrno, taskId);
+        boolean swift = request.isSwift() || imageRenderService.hasSwiftText(taskId);
+        log.info("image request mstSrno={} taskId={} swift_yn={} -> {}",
+                mstSrno, taskId, request.getSwiftYn(), swift ? "text" : "image");
 
-        String imgStr = imageRenderService.renderBase64(taskId, mstSrno);
-        return ResponseEntity.ok(new ImageResponse(imgStr));
+        // SWIFT 전문(문서분류 01): 원문 텍스트 그대로 응답 → aisanctions 가 화면에서 이미지로 그림
+        if (swift) {
+            return ResponseEntity.ok(ImageResponse.text(imageRenderService.loadSwiftText(taskId, mstSrno)));
+        }
+
+        return ResponseEntity.ok(ImageResponse.image(imageRenderService.renderBase64(taskId, mstSrno)));
     }
 
     @GetMapping("/health")

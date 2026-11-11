@@ -15,6 +15,7 @@ public enum DocType {
     LC("10", "L/C", new Color(220, 38, 38)),
     SHIPMENT("11", "Shipment", new Color(5, 150, 105)),
     ETC("12", "ETC", new Color(100, 116, 139)),
+    // 실제 SWIFT 전문 판단은 문서분류코드 01(aisanctions swift_yn=Y) 기준, 이 값은 테스트 이미지 라벨용
     SWIFT("13", "Swift", new Color(15, 118, 110)),
     OTHER("99", "Document", new Color(100, 116, 139));
 

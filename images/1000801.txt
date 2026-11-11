@@ -1,0 +1,51 @@
+<발신 기본 정보>
+1. 은행구분 : 우리은행(20) 5. 해외발송조작자 : 8MCEN320
+2. 관련영업점 : 020041(11) 6. 해외발송책임자 : 999999999
+3. 업무구분 : FD 7. 수신전문의 회신전문여부 : 
+4. 고객번호 : 010989732
+Payment Type Infomation
+service Level
+23E Code:G001
+32A Interbank Settlement Amount:[EUR] 7613.59
+interbank Settlement Date:2026-10-08
+33B Instructed Amount:[EUR] 7613.59
+71A Charges bEARER:SHAR
+instructing Agent
+Financial Institution Identification
+BICFI:HVBKKRSEXXX
+instructed Agent
+Financial Institution Identification
+BICFI:BKCHCNBJXXX
+Debtor
+50D Name:LEE SEO YEON
+Postal Address
+Street Name:45, CENTUM JUNGANG-RO
+Post Code:48058
+Town Name:BUSAN
+Town Location Name:HAEUNDAE-GU
+contry:KR
+Debtor Account
+Identification
+Other
+Identificatio:010989732
+Creditor
+59 Name:SHANGHAI HUAXIN CO
+Postal Address
+Town Name:SHANGHAI
+contry:CN
+Remittance Information
+70 Unstructured:INV NO 20261008-1000801 PAYMENT FOR GOODS
+<관련 수신 전문 정보>
+1. 수신일시 :
+2. 수신전문(MT/MOR/REF):
+<원장 MASTER KEY>
+1. 전문번호:20SSS20261008020783
+2. 분할번호:00
+3. 관련HOST KEY:20O20261008103A002369526
+4. 관련전문번호:
+5. CREATE DATE: 2026/10/08 16:30:51 CREATE USER:8MCEN
+6. VERIFY DATE:VERIFY USER:
+7. APPROVAL DATE: APPROVAL USER:9999999999
+8. 1'st ACK DATE: 2026/10/08 16:30:51 1'st ACK USER:
+9. 2'nd ACK DATE:
+[MOCK] INPT_MST_SRNO=10008 INPT_TASK_ID=1000801

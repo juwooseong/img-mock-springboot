@@ -17,6 +17,7 @@ import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -51,6 +52,55 @@ public class ImageRenderService {
         cacheRoot = imageRoot.resolve("cache");
         Files.createDirectories(cacheRoot);
         log.info("Image root: {}", imageRoot.toAbsolutePath());
+    }
+
+    /** images/{task_id}.txt 가 있으면 SWIFT 전문 task 로 본다. */
+    public boolean hasSwiftText(String taskId) {
+        return Files.isRegularFile(imageRoot.resolve(sanitize(taskId) + ".txt"));
+    }
+
+    /**
+     * SWIFT 전문 원문 반환.
+     * 1) images/{task_id}.txt  2) swift-sample-file(기본 sample.txt)  3) 내장 샘플
+     */
+    public String loadSwiftText(String taskId, String mstSrno) throws IOException {
+        Path taskFile = imageRoot.resolve(sanitize(taskId) + ".txt");
+        if (Files.isRegularFile(taskFile)) {
+            return readText(taskFile);
+        }
+
+        String sample = properties.getSwiftSampleFile();
+        if (sample != null && !sample.trim().isEmpty()) {
+            Path samplePath = Paths.get(sample.trim());
+            if (!samplePath.isAbsolute()) {
+                samplePath = Paths.get(System.getProperty("user.dir")).resolve(samplePath);
+            }
+            if (Files.isRegularFile(samplePath)) {
+                return readText(samplePath);
+            }
+        }
+
+        return defaultSwiftText(taskId, mstSrno);
+    }
+
+    private String readText(Path path) throws IOException {
+        String text = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
+        if (text.startsWith("﻿")) {
+            text = text.substring(1);
+        }
+        return text.replace("\r\n", "\n").replace('\r', '\n');
+    }
+
+    private String defaultSwiftText(String taskId, String mstSrno) {
+        return "<발신 기본 정보>\n"
+                + "1. 은행구분 : 우리은행(20)\n"
+                + "2. 업무구분 : FD\n"
+                + "32A Interbank Settlement Amount:[USD] 1000.00\n"
+                + "interbank Settlement Date:2026-01-01\n"
+                + "71A Charges Bearer:SHAR\n"
+                + "<원장 MASTER KEY>\n"
+                + "1. 전문번호:MOCK-" + mstSrno + "\n"
+                + "2. INPT_TASK_ID:" + taskId + "\n";
     }
 
     public String renderBase64(String taskId, String mstSrno) throws IOException {

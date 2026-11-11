@@ -1,0 +1,51 @@
+<발신 기본 정보>
+1. 은행구분 : 우리은행(20) 5. 해외발송조작자 : 8MCEN317
+2. 관련영업점 : 020038(11) 6. 해외발송책임자 : 999999999
+3. 업무구분 : FD 7. 수신전문의 회신전문여부 : 
+4. 고객번호 : 010989729
+Payment Type Infomation
+service Level
+23E Code:G001
+32A Interbank Settlement Amount:[CNY] 4993.48
+interbank Settlement Date:2026-10-05
+33B Instructed Amount:[CNY] 4993.48
+71A Charges bEARER:SHAR
+instructing Agent
+Financial Institution Identification
+BICFI:HVBKKRSEXXX
+instructed Agent
+Financial Institution Identification
+BICFI:DEUTDEFFXXX
+Debtor
+50D Name:CHOI YU NA
+Postal Address
+Street Name:17, DUNSAN-RO
+Post Code:35242
+Town Name:DAEJEON
+Town Location Name:SEO-GU
+contry:KR
+Debtor Account
+Identification
+Other
+Identificatio:010989729
+Creditor
+59 Name:HANSA MASCHINEN GMBH
+Postal Address
+Town Name:FRANKFURT
+contry:DE
+Remittance Information
+70 Unstructured:INV NO 20261005-1000501 PAYMENT FOR GOODS
+<관련 수신 전문 정보>
+1. 수신일시 :
+2. 수신전문(MT/MOR/REF):
+<원장 MASTER KEY>
+1. 전문번호:20SSS20261005020780
+2. 분할번호:00
+3. 관련HOST KEY:20O20261005103A002369523
+4. 관련전문번호:
+5. CREATE DATE: 2026/10/05 16:30:51 CREATE USER:8MCEN
+6. VERIFY DATE:VERIFY USER:
+7. APPROVAL DATE: APPROVAL USER:9999999999
+8. 1'st ACK DATE: 2026/10/05 16:30:51 1'st ACK USER:
+9. 2'nd ACK DATE:
+[MOCK] INPT_MST_SRNO=10005 INPT_TASK_ID=1000501

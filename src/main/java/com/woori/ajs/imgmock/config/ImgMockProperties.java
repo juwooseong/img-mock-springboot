@@ -9,6 +9,16 @@ public class ImgMockProperties {
 
     private String imageDir = "images";
     private boolean cacheEnabled = true;
+    /** images/{task_id}.txt 가 없을 때 쓰는 기본 SWIFT 전문 파일 (상대경로 시 실행 디렉터리 기준) */
+    private String swiftSampleFile = "sample.txt";
+
+    public String getSwiftSampleFile() {
+        return swiftSampleFile;
+    }
+
+    public void setSwiftSampleFile(String swiftSampleFile) {
+        this.swiftSampleFile = swiftSampleFile;
+    }
 
     public String getImageDir() {
         return imageDir;
